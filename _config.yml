@@ -1,50 +1,23 @@
-# Site settings
-title: Nangka
-email: your@mail.com
-description: > # this means to ignore newlines until "baseurl:"
-  Welcome to my awesome blog.
-baseurl: "/nangka" # the subpath of your site, e.g. /blog
-url: "https://rmsubekti.github.io" # the base hostname & protocol for your site
-google_analytics: #your GA unique id, e.g. UA-xxxxxxxx-x
-disqus_username: #Your disqus_username to add comments on the post
-
-# Optional settings
-github: #your github username
-linkedin: #linkedin username
-twitter:
-  username: #twitter username here
-facebook:
-  app_id: 1234
-  publisher: 1234
-google_plus: #gplus id or username
-
-
-# Build settings
 markdown: kramdown
+permalink: none
+host: 0.0.0.0
+port: 4000
 
-sass:
-    style: compressed
-
-gems:
-  - jekyll-redirect-from
-  - jekyll-mentions
-  - jekyll-paginate
-  - jekyll-sitemap
-  - jekyll-seo-tag
-  - jekyll-feed
-  - jemoji
-
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  
 defaults:
-    - {scope: {type: posts}, values: {layout: post, permalink : '/:year/:title/'}}
-
-include:
-  - _pages
-
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "nouveau_article"
+      
 exclude:
   - CNAME
+  - Gruntfile.js
+  - package.json
   - README.md
-  - Gemfile
-  - Gemfile.lock
-
-paginate: 5
-paginate_path: 'p/:num'
+  - node_modules/
